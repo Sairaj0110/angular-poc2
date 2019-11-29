@@ -1,0 +1,18 @@
+<div class="container">
+        <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3"></div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+    <div *ngFor="let well of wellsArray">
+            <div [ngClass]="{'female':well.type=='female', 'male':well.type=='male'}"
+            [ngStyle]="{'color':well.type=='female'?'white':'black'}">
+            {{well.name}}<br>
+            {{well.type}}<br>
+            {{well.sourcekey}}
+            </div>
+        <app-well [sourceKey]="well.sourcekey" (notify)="onNotifyClicked($event)"></app-well>
+            <h2>{{showMessage}}</h2>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3"></div>
+    </div>
+    </div>
+</div>
